@@ -43,6 +43,7 @@ hadfield_res <- lapply(1:n_sims, function(x) {
   
   input <- reshape2::melt(data_matrices[[x]],as.is=T)
   colnames(input) <- c('symbiont','host','present')
+  input$present <- factor(input$present, levels=c(0,1))
   input$host.phy <- input$host
   input$symbiont.phy <- input$symbiont
   input$host.symbiont <- paste(input$host,input$symbiont,sep='.')
