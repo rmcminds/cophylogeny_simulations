@@ -29,7 +29,7 @@ priorC <- list(B=list(mu=0, V=1e+8), R=list(V=1, nu=0))
 priorC$G <-lapply(1:length(randfacts), function(x) {list(V=1, nu=1, alpha.mu=0, alpha.V=1000)})
 names(priorC$G) <- paste("G", 1:length(randfacts), sep="")
 
-hadfield_res <- lapply(1:nsims, function(x) {
+hadfield_res <- lapply(1:n_sims, function(x) {
   
   hostA <- MCMCglmm::inverseA(host[[x]])$Ainv
   symbiontA <- MCMCglmm::inverseA(symbiont[[x]])$Ainv
